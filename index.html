@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Callories</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/fonts.css">
+  </head>
+  <body>
+    <div id="main">
+      <img class="logo" src="img/speedometer-512.png" alt="">
+      <h1>Calories<br> Calculator</h1>
+      <p>Calculate optimal macronutrient rations for your body. Enter<br/> your age, height, weight, gender, and activity level.</p>
+      <div id="start"><span class="button">Calculate</span></div>
+    </div>
+    <div class="calc-data-wrapper">
+      <div class="body-parameters"><h3>Body Parameters</h3>
+        <div class="sex male">Male</div>
+        <div class="sex female">Female</div><br>
+        <input class="params_body" type="text" name="" placeholder="Age">
+        <input class="params_body" type="text" name="" placeholder="Height">
+        <input class="params_body" type="text" name="" placeholder="Weight">
+      </div>
+      <div class="activity-level"><h3>Activity Level</h3>
+          <p><b>Middle:</b> Activity that burns an additional 400-650 calories for females or 500-800 calories for males.</p>
+          <div class="wrapper_check_radio">
+            <input type="radio" class="activity_radio" id="low" name="radio">
+            <label for="low">Low</label>
+            <input type="radio" class="activity_radio" id="middle" name="radio">
+            <label for="middle" style="padding-left:4px;">Mid</label>
+            <input type="radio" class="activity_radio" id="high" name="radio">
+            <label for="high">High</label>
+          </div>
+      </div>
+      <div class="goals">
+        <h3>Goals</h3>
+        <div class="target gain_weight">Gain weight</div>
+        <div class="target lose_weight">Lose weight</div>
+      </div>
+      <div class="clear_but"><span class="button">Clear</span></div>
+      <div class="submit_but"><span class="button">Calculate</span></div>
+    </div>
+    <div class="calc_result_wrapper">
+      <div class="calc_result">
+        <h3>Your result</h3>
+      <div class="kcal_wrap">
+        <span id="kcal_value">1890 kcal</span>
+        <p>Suggested amount of calories <b>per day</b></p>
+      </div>
+      <div class="macronutrients">
+        <table width="100%">
+          <thead>
+            <tr><td colspan="2">Macronutrients</td></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="left_td">Carbohydrate</td>
+              <td class="right_td">216g/45.8%</td>
+            </tr>
+            <tr>
+              <td class="left_td">Protein</td>
+              <td class="right_td">138g/29.22%</td>
+            </tr>
+            <tr>
+              <td class="left_td">Fat</td>
+              <td class="right_td">53g/25.0%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      </div>
+      <div class="per_day_wrap">
+        <div class="target per_day">Per Day</div>
+        <div class="target three_meals">3 meals</div>
+        <div class="target four_meals">4 meals</div>
+        <div class="target five_meals">5 meals</div>
+      </div>
+      <div id="back_to_begin"><a class="button">Return</a></div>
+    </div>
+    <script>
+
+      var main = document.getElementById('main');
+      var butStart = document.getElementById('start');
+      main.style.width = window.innerWidth + 'px';
+      var submitBut = document.querySelector('.submit_but');
+
+      var calcData = document.querySelector('.calc-data-wrapper');
+      calcData.style.right = '-' + window.innerWidth/2 + 'px';
+      calcData.style.width = window.innerWidth/2 + 'px';
+      calcData.style.height = window.innerHeight + 'px';
+
+       var calcResult = document.querySelector('.calc_result_wrapper');
+       calcResult.style.width = window.innerWidth/2 + 'px';
+       calcResult.style.height = window.innerHeight + 'px';
+       calcResult.style.right = '-' + window.innerWidth/2 + 'px';
+
+      var backToBegin = document.getElementById('back_to_begin');
+      //Возврат на форму ввода данных от подсчета каллорий
+      backToBegin.onclick = function(){
+        calcData.style.right = '0px';
+        calcResult.style.right = '-' + window.innerWidth/2 + 'px';
+        main.style.left = '0px';
+      }
+      //Переход на форму ввода данных
+      butStart.onclick = function(){
+        main.style.width = window.innerWidth/2 + 'px';
+        calcData.style.right = '0px';
+      }
+      //Переход на подсчет калорий
+      submitBut.onclick = function(){
+        main.style.left = '-' + window.innerWidth/2 + 'px';
+        calcData.style.right = window.innerWidth/2 + 'px';
+        calcResult.style.right = '0px';
+        checkValue();
+      };
+
+
+      //Анимация калорий
+      function checkValue(){
+        var kcal = document.getElementById('kcal_value');
+        var kcalVal = parseFloat(kcal.innerHTML);
+        var animVal = 0;
+        var timerId;
+        timerId = setInterval(function(){
+          if(animVal >= 1892){
+            clearInterval(timerId);
+          }
+          animVal+=4;
+          kcal.innerHTML = animVal + 'kcal';
+        }, 5);
+      };
+        //Выбор пола, добавление класса active соответствующему полу
+        var male = document.querySelector('.male');
+        var female = document.querySelector('.female');
+        function setActive(elem1, elem2){
+          if(!elem1.classList.contains('active')){
+            elem1.classList.add('active');
+            if(elem2.classList.contains('active')){
+              elem2.classList.remove('active');
+            }
+          }
+        };
+        male.onclick = function(event){
+          return  setActive(male, female);
+        };
+
+        female.onclick = function(event){
+          return setActive(female, male);
+        };
+
+        //Выбор цели, добавление класса active соответствующему
+        var gainWeight = document.querySelector('.gain_weight');
+        var loseWeight = document.querySelector('.lose_weight');
+        gainWeight.onclick = function() {
+          return setActive(gainWeight, loseWeight);
+        };
+        loseWeight.onclick = function(){
+          return setActive(loseWeight, gainWeight);
+        };
+        //Ограничение на ввод только чисел в форме
+        var paramsBody = document.getElementsByClassName('params_body');
+        function onlyNumInParam(){
+          for(var j = 0; j<paramsBody.length; j++){
+            paramsBody[j].onkeypress = function(event){
+              event = event || window.event;
+              if(event.ctrKey || event.altKey || event.metaKey) return;
+              var char = getChar(event);
+              if(char == null) return;
+              if(char < '0' || char > '9'){
+                return false;
+              }
+            }
+          };
+        };
+        onlyNumInParam();
+
+
+        //Кросбраузерная поддержка нажатий клавиш на клавиатуре
+          function getChar(event) {
+                if (event.which == null) {
+                  if (event.keyCode < 32) return null;
+                  return String.fromCharCode(event.keyCode) // IE
+                }
+
+                if (event.which != 0 && event.charCode != 0) {
+                  if (event.which < 32) return null;
+                  return String.fromCharCode(event.which) // остальные
+                }
+
+                return null; // специальная клавиша
+              }
+
+    </script>
+  </body>
+</html>
