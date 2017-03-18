@@ -1,0 +1,320 @@
+body{
+  font-size: 18px;
+  background-color: #282E36;
+  overflow: hidden;
+  margin:0px;
+  font-family: "Dosis";
+}
+::-webkit-input-placeholder {color:#282E29;
+  font-size: 14px;
+font-family: "Dosis";}
+::-moz-placeholder          {color:#282E29;
+  font-size: 14px;
+  font-family: "Dosis";
+}/* Firefox 19+ */
+:-moz-placeholder           {color:#282E29;
+  font-size: 14px;
+  font-family: "Dosis";
+}/* Firefox 18- */
+:-ms-input-placeholder      {color:#282E29;
+  font-size: 14px;
+font-family: "Dosis";}
+
+input[type="text"]:focus { outline: none;
+  color: #02BEF7;
+border: 1px solid #02BEF7; }
+#main{
+  margin-top: 100px;
+  text-align: center;
+  color: #FAFAFA;
+  transition: 0.8s;
+  position:absolute;
+  left: 0px;
+}
+.logo{
+  height: 60px;
+}
+#main h1{
+  margin-top: 40px;
+  text-transform: uppercase;
+  color: #FAFAFA;
+  font-size: 40px;
+  text-align: center;
+  font-family: "Dosis";
+  font-weight: lighter;
+}
+#main p{
+  font-size: 16px;
+  font-family: "Dosis";
+  font-weight: lighter;
+}
+.button{
+  padding: 10px 35px;
+  text-decoration: none;
+  color: #02BEF7;
+  border: 2px solid #02BEF7;
+  border-radius: 20px;
+  transition: 280ms;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-family: "Dosis";
+}
+#start {
+  margin-top: 80px;
+}
+.button:hover{
+  background-color: #02BEF7;
+  border-radius: 20px;
+  color: #282e36;
+}
+.button:active{
+  background-color: #0079BA;
+  border-color: #0079BA;
+}
+.calc-data-wrapper{
+  background-color: #495469;
+  color: #Ebebeb;
+  position: absolute;
+  transition: 0.6s;
+  padding-top: 50px;
+  text-align: center;
+}
+h3{
+  color: #EBEBEB;
+  font-weight:lighter;
+  font-family: 'Dosis';
+  text-transform: uppercase;
+  font-size: 20px;
+  padding: 0px 35px;
+  text-align: left;
+  margin-bottom: 10px;
+}
+.body-parameters .sex{
+  text-transform: uppercase;
+  padding: 20px 30px;
+  text-align: center;
+  font-family: 'Dosis';
+  font-weight: lighter;
+  background-color: #282E36;
+  display: inline-block;
+  -webkit-box-shadow: -1px 1px 17px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: -1px 1px 17px 0px rgba(0,0,0,0.75);
+  box-shadow: -1px 1px 17px 0px rgba(0,0,0,0.75);
+  width:150px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+.body-parameters .sex:hover{
+  background-color: #282E3D;
+
+}
+.body-parameters .sex.active{
+  background-color: #0D0D0D;
+  color: #02BEF7;
+}
+.params_body{
+  width: 150px;
+  border: 1px solid #282E29;
+  border-radius: 20px;
+  background-color: #495469;
+  padding: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  height: 20px;
+  margin: 10px;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #EBEBEB;
+  font-family: "Dosis";
+  text-align: center;
+}
+.activity-level p{
+  font-family: "Dosis";
+  font-weight: lighter;
+  margin: 10px 35px 25px 35px;
+  text-align: left;
+  font-size: 14px;
+}
+
+.activity_radio {
+  vertical-align: top;
+  width: 17px;
+  height: 17px;
+  margin: 0 3px 0 0;
+}
+.activity_radio + label {
+  cursor: pointer;
+}
+.activity_radio:not(checked) {
+  position: absolute;
+  opacity: 0;
+}
+.activity_radio:not(checked) + label {
+  position: relative;
+  padding: 35px 0 0 0;
+  margin: 0 50px;
+}
+.activity_radio:not(checked) + label:before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: 0;
+  width: 25px;
+  height: 25px;
+  border: 1px solid #282E29;
+  border-radius: 50%;
+  background: #495469;
+}
+.activity_radio:not(checked) + label:after {
+  content: '';
+  position: absolute;
+  top: 1px;
+  left: 4px;
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+  background: #02BEF7;
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.5);
+  opacity: 0;
+  transition: all .2s;
+}
+.activity_radio:checked + label:after {
+  opacity: 1;
+}
+.wrapper_check_radio label{
+  font-family: "Dosis";
+  font-weight: bold;
+  font-size: 14px;
+  text-transform: uppercase;
+  margin-left:30px;
+
+}
+.wrapper_check_radio{
+  margin-top: 65px;
+  margin-bottom:25px;
+}
+.activity_radio:not(checked) + label:before:nth-child(1){
+  left:10px;
+}
+.target{
+  text-transform: uppercase;
+  padding: 20px 30px;
+  text-align: center;
+  font-family: 'Dosis';
+  background-color: #282E36;
+  display: inline-block;
+  -webkit-box-shadow: -1px 1px 17px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: -1px 1px 17px 0px rgba(0,0,0,0.75);
+  box-shadow: -1px 1px 17px 0px rgba(0,0,0,0.75);
+  cursor: pointer;
+  margin-right: 10px;
+}
+.goals .target{
+  width: 150px;
+  background-color: #282E36;
+}
+.goals .target.active{
+  background-color: #0D0D0D;
+  color: #02BEF7;
+}
+.clear_but{
+  float: left;
+  margin-left: 35px;
+  margin-top: 40px;
+}
+.clear_but .button{
+  border: none;
+  padding: 5px 20px;
+}
+.submit_but{
+  float: right;
+  margin-right: 35px;
+  margin-top: 40px;
+}
+.target:hover{
+  background-color: #282E3D;
+}
+.target:active{
+  background-color: #0D0D0D;
+}
+.calc_result_wrapper{
+  background-color: #282E36;
+  color: #Ebebeb;
+  position: absolute;
+  padding-top: 50px;
+  text-align: center;
+  -webkit-transition: all 0.7s;
+  -o-transition: all 0.7s;
+  transition: all 0.7s;
+}
+
+.kcal_wrap{
+  float: left;
+  margin-left: 35px;
+  font-size: 14px;
+  margin-top: 10px;
+}
+.kcal_wrap #kcal_value{
+  font-size: 50px;
+  color: #02BEF7;
+  margin-bottom: 0px;
+}
+.kcal_wrap p{
+  margin-top: -3px;
+  margin-left: 4px;
+  text-align: left;
+}
+.macronutrients{
+  float: right;
+  margin-right: 40px;
+  margin-top: -15px;
+}
+.macronutrients thead td{
+  font-size: 22px;
+  text-align: left;
+  border-bottom: 5px solid #02BEF7;
+  padding-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+.macronutrients tbody tr:after{
+  content: '';
+  position: absolute;
+  margin-left: -273px;
+  width: 272px;
+  margin-top: -3px;
+  border-bottom: 1px solid #02BEF7;;
+}
+table .left_td{
+  text-align: left;
+  width: 180px;
+  padding: 8px 0 8px 0;
+}
+table .right_td{
+  text-align: right;
+  padding: 0 0 15px 0;
+}
+#back_to_begin .button{
+  border: none;
+  position: absolute;
+  top: 20px;
+  left: 25px;
+  font-size: 16px;
+  padding: 5px 10px;
+}
+#back_to_begin .button:hover{
+  background-color: ;
+}
+.per_day_wrap{
+  display: inline-flex;
+}
+.per_day_wrap .target{
+  background-color: #262626;
+  box-shadow: -1px 1px 10px 0px rgba(0,0,0,0.75);
+  cursor: default;
+  margin-top: 16px;
+}
+.per_day_wrap .target:first-child{
+  background-color: #0D0D0D;
+  color: #02BEF7;
+}

@@ -1,0 +1,6 @@
+@font-face {
+    font-family: 'Dosis';
+    src: url('../fonts/Dosis'), url('../fonts/dosis.woff2') format('woff2'), url('../fonts/dosis.woff') format('woff'), url('../fonts/dosis.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
